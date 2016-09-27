@@ -1,0 +1,62 @@
+
+<html>
+<head>
+
+  <title>mod_h264_streaming FlowPlayer plugin</title>
+  
+
+</head>
+
+<body>
+
+
+<script type="text/javascript" src="flowplayer-3.0.3.min.js"></script>
+
+<a style="display:block;width:640px;height:360px" id="player"></a>
+<!-- this will install flowplayer inside previous A- tag. -->
+<script type="text/javascript">
+
+flowplayer("player", "flowplayer-3.0.3.swf", {
+  clip: {
+    url: 'http://210.30.96.51/jlpt/testmp4/trailer2.mp4',
+    autoPlay: false,
+    autoBuffering: true,
+    provider: 'h264streaming',
+    bufferLength: 3,
+    seekableOnBegin: true
+
+  },
+
+  onLoad: function(){
+	var time1 = setTimeout("$f().seek(60)",2000);
+
+    },
+ 
+  plugins: {
+    h264streaming: {
+      url: 'flowplayer.h264streaming-3.0.5.swf'
+    },
+    controls: {  
+      url: 'flowplayer.controls-3.0.3.swf',  
+ 
+      // which buttons are visible and which not ?  
+      play:false,       
+      fullscreen:true,  
+ 
+     // scrubber is a well known nickname to the timeline/playhead combination  
+      scrubber: true          
+    }               
+  }
+});
+
+</script>
+<div id="a"></div>
+<ol>
+	<li onclick="$f().seek(60)">example1</li>
+	<li onclick="alert('!!! + $f().getClip()')">show</li>
+</ol>
+
+<p>The h264streaming plugin for Flowplayer is <a href="http://h264.code-shop.com/demo/flowplayer/flowplayer.h264streaming-3.0.5.swf">available</a>. (Right click and Save Link As)</p>
+
+</body>
+</html>
