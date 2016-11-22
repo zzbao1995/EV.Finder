@@ -31,7 +31,7 @@
 	
    		<form id="loginform" action="login.do" method="post">
    		<table>
-    	<tr><td>用户大名</td><td><input type="text" name="account" id="account"></td></tr>
+    	<tr><td>用户名</td><td><input type="text" name="account" id="account"></td></tr>
     	<tr><td>密  码</td><td><input type="password" name="password" size="20" id="password"></td></tr>
     	<tr><td colspan="2" align="center">&nbsp;&nbsp;<input type="submit" id="login" value="登录" class="loginbutton">
     	    &nbsp;&nbsp;<input type="button" value="注册" class="loginbutton" onclick="register()">
